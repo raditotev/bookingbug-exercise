@@ -17,6 +17,7 @@ app.controller('ctrl', function($scope, $http) {
     console.log(response);
     $scope.headers = response.config.headers;
     $scope.status = response.status;
+    $scope.services = response.data._embedded.services;
     $scope.numberServices = response.data._embedded.services.length;
   }).catch(function onRejection(errorResponse) {
     console.log("Error: ", errorResponse.status);
