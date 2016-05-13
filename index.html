@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/jasmine-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.3.3/boot.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.8/angular-mocks.js"></script>
+    <script src="app.js"></script>
+    <script src="app.spec.js"></script>
+  </head>
+
+  <body ng-app="app">
+    <div class="container" ng-controller="ctrl">
+      <h1 class="text-center">
+        Company Bookable Services<br>
+        provided by<br>
+        <img src="https://dev.bookingbug.com/images//bblogo.svg" id="logo" alt="logo" /><br>
+        REST API
+    </h1>
+      <div class="row services" ng-repeat="service in services">
+        <div class="col-xs-1">
+          <img src="{{service.extra.image_url}}" class="img-responsive" alt="{{service.name}}" />
+        </div>
+        <div class="col-xs-2">
+          <h3>{{service.name}}</h3>
+        </div>
+        <div class="col-xs-8">
+          <p>{{service.description}}</p>
+        </div>
+        <div class="col-xs-1 text-right">
+          <strong>&pound;{{service.prices[0]/100}}</strong>
+        </div>
+      </div>
+      <p class="text-center text-warning" id="error">{{error.status}} {{error.statusText}}</p>
+    </div>
+    <br><br>
+  </body>
+
+</html>

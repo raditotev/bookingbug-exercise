@@ -1,0 +1,22 @@
+/* Styles go here */
+
+#logo{
+  width: 300px;
+}
+
+.row h3{
+  margin-top: 0;
+}
+
+.services{
+  margin: 10px 0;
+}
+
+h1{
+  margin: 50px;
+}
+
+#error{
+  font-size: 25px;
+  font-weight: bold;
+}
